@@ -53,8 +53,24 @@ export default class HomeScreen extends Component<Props, State> {
     console.log('HomeScreen::UnMount::Firing');
   } // End of componentWillMount()
 
+  /******************************************************************************/
+  /****************************** ACTION METHODS ********************************/
+  /******************************************************************************/
+
   /**
-   * Render HomeScreen
+   * Action: Press
+   * navigate user to the InfoScreen
+   */
+  private handleNavigate() {
+    this.props.navigation.navigate("Info", {});
+  }
+
+  /******************************************************************************/
+  /****************************** RENDER METHODS ********************************/
+  /******************************************************************************/
+
+  /**
+   * Render: HomeScreen
    * 
    * @returns ReactNode
    */
@@ -72,7 +88,7 @@ export default class HomeScreen extends Component<Props, State> {
         <StatusBar barStyle={"dark-content"}  translucent backgroundColor={"transparent"}></StatusBar>
         <SafeAreaView style={styles.safeAreaContainer}>
           <KeyboardAvoidingView style={styles.mainContainer}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={() => this.props.navigation.navigate("Info", {})}>
                 <Text style={styles.buttonText}>
                   ENTER IF YOU DARE
                 </Text>

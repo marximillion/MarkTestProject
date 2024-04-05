@@ -1,6 +1,6 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import {Component, ReactNode} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {ImageBackground, KeyboardAvoidingView, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import { StackParamList } from '../navigation/StackParamList';
 import { RouteProp } from '@react-navigation/native';
 
@@ -32,7 +32,6 @@ export default class InfoScreen extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     console.log('InfoScreen::Constructor::Firing');
-    // console.log(this.props.user);
 
     this.state = {
       firstName: '',
@@ -60,14 +59,31 @@ export default class InfoScreen extends Component<Props, State> {
 
     return (
       <>
-        <Text>Success to InfoScreen</Text>
+        <StatusBar barStyle={"dark-content"}  translucent backgroundColor={"transparent"}></StatusBar>
+        <SafeAreaView style={styles.safeAreaContainer}>
+          <KeyboardAvoidingView style={styles.mainContainer}>
+              <Text style={styles.mainText}>
+                WELCOME TO THE GREATEST APP IN THE WORLD
+              </Text>
+          </KeyboardAvoidingView>
+        </SafeAreaView>
       </>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  headerText: {
+  safeAreaContainer: {
+    flex: 1,
+    width: '100%',
+  },
+  mainContainer: {
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flex: 1,
+    paddingTop: 150,
+  },
+  mainText: {
     fontSize: 50,
     fontWeight: 'bold',
     color: 'black',

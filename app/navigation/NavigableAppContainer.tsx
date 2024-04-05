@@ -11,6 +11,7 @@ import {StackParamList} from './StackParamList';
 import DetailsScreen from '../screens/InfoScreen';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import InfoScreen from '../screens/InfoScreen';
 
 /**
  * Initialization
@@ -26,7 +27,7 @@ const Tab = createBottomTabNavigator<StackParamList>();
 function MainStack() {
   <Stack.Navigator>
     <Stack.Screen name={'Home'} component={HomeScreen} />
-    <Stack.Screen name={'Info'} component={DetailsScreen} />
+    <Stack.Screen name={'Info'} component={InfoScreen} />
     <Stack.Screen name={'Profile'} component={ProfileScreen} />
   </Stack.Navigator>;
 }
@@ -46,6 +47,8 @@ export function NavigableAppContainer() {
           component={HomeScreen}
           options={{headerShown: false}}
         />
+        <Stack.Screen name={'Info'} component={InfoScreen} />
+        <Stack.Screen name={'Profile'} component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
