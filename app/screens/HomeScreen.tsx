@@ -1,6 +1,6 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import {Component, ReactNode} from 'react';
-import {Button, Dimensions, Image, ImageBackground, KeyboardAvoidingView, StatusBar, StyleSheet, Text} from 'react-native';
+import {Appearance, Button, Dimensions, Image, ImageBackground, KeyboardAvoidingView, StatusBar, StyleSheet, Text} from 'react-native';
 import { StackParamList } from '../navigation/StackParamList';
 import { Route, RouteProp } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -21,7 +21,7 @@ export interface HomeProps {
  * State
  */
 interface State {
-
+  colorScheme: 'light' | 'dark' | null | undefined,
 }
 
 export default class HomeScreen extends Component<Props, State> {
@@ -35,7 +35,7 @@ export default class HomeScreen extends Component<Props, State> {
     console.log('HomeScreen::Constructor::Firing');
 
     this.state = {
-
+      colorScheme: Appearance.getColorScheme(),
     };
   } // End of contructor()
 
@@ -56,14 +56,6 @@ export default class HomeScreen extends Component<Props, State> {
   /******************************************************************************/
   /****************************** ACTION METHODS ********************************/
   /******************************************************************************/
-
-  /**
-   * Action: Press
-   * navigate user to the InfoScreen
-   */
-  private handleNavigate() {
-    this.props.navigation.navigate("Info", {});
-  }
 
   /******************************************************************************/
   /****************************** RENDER METHODS ********************************/

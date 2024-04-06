@@ -13,9 +13,11 @@ interface Props {
 }
 
 export interface ProfileProps {
-  firstName: string;
-  lastName: string;
-  age: number;
+  details: {
+    firstName: string;
+    lastName: string;
+    age: number;
+  }
 }
 
 /**
