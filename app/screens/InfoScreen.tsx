@@ -1,6 +1,6 @@
 import { StackNavigationProp } from '@react-navigation/stack';
 import {Component, ReactNode} from 'react';
-import {ImageBackground, KeyboardAvoidingView, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {Dimensions, ImageBackground, KeyboardAvoidingView, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import { StackParamList } from '../navigation/StackParamList';
 import { RouteProp } from '@react-navigation/native';
 
@@ -56,15 +56,15 @@ export default class InfoScreen extends Component<Props, State> {
 
   public render(): ReactNode {
     console.log('InfoScreen::Render::Firing');
-
+    const windowWidth = Dimensions.get('screen').width;
+    const windowHeight = Dimensions.get('screen').height;
     return (
       <>
         <StatusBar barStyle={"dark-content"}  translucent backgroundColor={"transparent"}></StatusBar>
         <SafeAreaView style={styles.safeAreaContainer}>
           <KeyboardAvoidingView style={styles.mainContainer}>
-              <Text style={styles.mainText}>
-                WELCOME TO THE GREATEST APP IN THE WORLD
-              </Text>
+            {/* three text inputs for name year and age, if i can figure it out can also incorporate use of Camera */}
+            <Text>Update</Text>
           </KeyboardAvoidingView>
         </SafeAreaView>
       </>

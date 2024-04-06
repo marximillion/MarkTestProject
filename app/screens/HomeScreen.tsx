@@ -76,14 +76,12 @@ export default class HomeScreen extends Component<Props, State> {
    */
   public render(): ReactNode {
     console.log('HomeScreen::Render::Firing');
-    const windowWidth = Dimensions.get('window').width;
-    const windowHeight = Dimensions.get('window').height;
     return (
       <>
         <ImageBackground
           source={require('../assets/backgroundImage.jpg')}
           resizeMode='cover'
-          style={[styles.image, { opacity: 0.8 }]}
+          style={[styles.image, { opacity: 0.9 }]}
         >
         <StatusBar barStyle={"dark-content"}  translucent backgroundColor={"transparent"}></StatusBar>
         <SafeAreaView style={styles.safeAreaContainer}>
@@ -120,7 +118,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   button: {
-    backgroundColor: 'rgba(255, 105, 180, 0.2)', // Pinkish color with 60% transparency
+    backgroundColor: 'rgba(255, 105, 180, 0.05)', // Pinkish color with 60% transparency
     borderRadius: 25,
     paddingHorizontal: 20,
     paddingVertical: 10,
